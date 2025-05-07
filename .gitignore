@@ -1,0 +1,37 @@
+# Ignorar arquivos e pastas do sistema
+*.DS_Store
+*.log
+*.swp
+*.swo
+*.tmp
+*.bak
+*.old
+*.save
+*.lock
+*.cache
+*.zshrc
+*.bash_history
+*.viminfo
+*.zsh_history
+*.zsh_sessions/
+*.zcompdump*
+*.CFUserTextEncoding
+*.p10k.zsh
+
+# Ignorar pastas pessoais
+Applications/
+Desktop/
+Documents/
+Downloads/
+Library/
+Movies/
+Music/
+Pictures/
+Public/
+
+# Ignorar configurações do VSCode
+.vscode/
+
+# Ignorar dependências e builds
+node_modules/
+dist/
