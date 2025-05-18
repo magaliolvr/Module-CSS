@@ -1,0 +1,28 @@
+:root {
+  --bg: #f7f7f7;
+  --black: black;
+  --black-3: rgba(0, 0, 0, 0.5);
+  --border-gray: rgb(192, 192, 192);
+  --black-2: rgba(0, 0, 0, 0.8);
+  --alt-bg: #ededed;
+  --off-white: #f1f1f1;
+  --accent: #ea5d31;
+  --alt-bg-2: #f0f0f0;
+  --ultra-light-text: #777;
+  --borders-dark-bg: rgba(255, 255, 255, 0.05);
+  --figma-purple: #8d4cf6;
+  --font-family: "Inter", sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+button {
+  cursor: pointer;
+}
+
+main {
+  width: 940px;
+  margin: 0 auto;
+}/*# sourceMappingURL=common.css.map */
