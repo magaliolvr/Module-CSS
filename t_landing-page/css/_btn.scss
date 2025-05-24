@@ -1,0 +1,42 @@
+@use "colors" as *;
+
+// --------Importing styles----------------
+
+.btn {
+  font-size: 16px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.btn-primary {
+    @include background("blue");
+
+    &:hover {
+      background-color: darken($blue, 10%);
+    }
+  }
+
+  &.btn-secondary {
+    @include background("black");
+
+    &:hover {
+      background-color: lighten(rgb(61, 59, 59), 10%);
+    }
+  }
+
+  &.btn-play {
+    @include background("blue");
+    border-radius: 20px;
+    padding: 12px 20px;
+
+    &:hover {
+      background-color: darken($blue, 10%);
+      transform: scale(1.08);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}

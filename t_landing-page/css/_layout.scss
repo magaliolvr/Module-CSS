@@ -1,0 +1,129 @@
+@use "colors" as *;
+
+// --------Importing styles----------------
+
+main {
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 60px auto 0 auto;
+  padding: 40px 32px;
+  max-width: 1200px;
+  margin: 60px auto 0 auto;
+
+  :has(> button + button) {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+
+  img,
+  video {
+    width: 100%;
+    display: block;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px;
+
+    &_title {
+      margin-bottom: 32px;
+      font-size: 80px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .btn {
+      &.btn-play {
+        position: relative;
+        top: -20px;
+      }
+    }
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px;
+
+    &_title {
+      margin-bottom: 32px;
+      font-size: 40px;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    &_content {
+      max-width: 75ch;
+      margin: 0 auto;
+      font-size: 20px;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    &.section--highlight {
+      position: relative;
+      z-index: 1;
+      background: none;
+      padding: 40px 32px;
+
+      img {
+        max-width: 500px;
+        margin: 0 auto;
+        display: block;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 100vw;
+        height: 80%;
+        background: $light-gray;
+        transform: translateX(-50%);
+        z-index: -1;
+      }
+
+      // Linha vertical decorativa no topo, centralizada
+      .section__line-marker {
+        &::after {
+          content: "";
+          position: absolute;
+          top: -40px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 2px;
+          height: 80px;
+          background: #e5e5e5;
+          border-radius: 2px;
+          z-index: 2;
+        }
+      }
+    }
+
+    &.bg-animation-slot {
+      position: relative;
+      z-index: 1;
+      background-clip: url("/t_landing-page/assets/background.mp4");
+      background-size: cover;
+      padding: 40px 32px;
+
+      img {
+        max-width: 500px;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+}
