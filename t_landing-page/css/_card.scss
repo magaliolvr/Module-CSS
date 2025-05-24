@@ -1,0 +1,46 @@
+@use "colors" as *;
+
+// --------Importing styles----------------
+.card {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #dfd4d4;
+  width: auto;
+  margin-bottom: 24px;
+  border-radius: 4px;
+  padding: 16px;
+
+  &.card-effect {
+    transition: all 0.4s ease-in-out;
+
+    .card-effect__title {
+      font-weight: 500;
+      margin-bottom: 16px;
+
+      h3 {
+        font-size: 24px;
+      }
+    }
+
+    &:hover {
+      @include background("blue");
+      border: none;
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    &:hover .card-effect__img {
+      @include background("white");
+      transform: scale(1.05);
+    }
+
+    .card-effect__img {
+      content: "";
+      @include background("blue");
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      align-self: anchor-center;
+    }
+  }
+}
