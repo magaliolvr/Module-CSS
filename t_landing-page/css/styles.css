@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 .bg-gray {
   background: #fbfbfb;
@@ -150,6 +151,23 @@ small,
     font-size: 1rem;
   }
 }
+.user-badge {
+  margin-top: 16px;
+}
+.user-badge .user-badge__avatar {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 16px;
+  background-color: #abd3fa;
+  font-size: 12px;
+  padding: 8px;
+  margin: 4px;
+}
+.user-badge .user-badge__name {
+  font-weight: 600;
+}
+
 .navbar {
   padding: 16px 24px;
   display: grid;
@@ -285,17 +303,76 @@ main .section.section--highlight .section__line-marker::after {
   border-radius: 2px;
   z-index: 2;
 }
-main .section.bg-animation-slot {
+main .section.bg-animation-slot .gallery-wrapper {
+  position: relative; /* O position: relative é necessário para que o absolute do vídeo funcione com base nessa div.scss Copiar Editar */
+}
+main .section.bg-animation-slot .gallery-wrapper .bg-animation-slot__video {
+  position: absolute; /*Faz com que o vídeo "flutue" sobre o .gallery-wrapper, podendo ser posicionado manualmente.*/
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 60%;
+  object-fit: cover;
+  z-index: 0;
+  align-self: anchor-center;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+main .section.bg-animation-slot .gallery-wrapper .gallery {
   position: relative;
   z-index: 1;
-  background-clip: url("/t_landing-page/assets/background.mp4");
-  background-size: cover;
-  padding: 40px 32px;
 }
-main .section.bg-animation-slot img {
-  max-width: 500px;
-  margin: 0 auto;
-  display: block;
+main .articles-slot {
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  text-align: -webkit-center;
+  width: 100%;
+}
+main .articles-slot .articles-slot__filters {
+  margin: 24px 16px;
+}
+main .articles-slot .articles-slot__filters ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+main .articles-slot .articles-slot__content {
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+main .articles-slot .articles-slot__content ul {
+  gap: 24px;
+  display: flex;
+}
+
+footer {
+  border-top: solid 1px #f3f1f1;
+}
+footer .footer-content {
+  font-size: 12px;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+footer .footer-content h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+footer .footer-content a {
+  cursor: pointer;
+  color: #191919;
+  font-weight: 400;
+}
+footer .footer-content a:hover {
+  text-decoration: underline;
+}
+footer .footer-content ul.footer-col {
+  width: 25%;
 }
 
 .card {
@@ -306,6 +383,7 @@ main .section.bg-animation-slot img {
   margin-bottom: 24px;
   border-radius: 4px;
   padding: 16px;
+  background-color: #ffffff;
 }
 .card.card-effect {
   transition: all 0.4s ease-in-out;
@@ -324,6 +402,15 @@ main .section.bg-animation-slot img {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.card.card-effect:hover .btn {
+  background: #ffffff;
+  color: #0064da;
+  border: 1px solid #ffffff; /*sempre que utilizar background azul, e tive um filho btn, este será  estilo aplicado*/
+}
+.card.card-effect:hover .btn:hover {
+  background: #0064da;
+  color: #ffffff;
+}
 .card.card-effect:hover .card-effect__img {
   background-color: #ffffff;
   color: #0064da;
@@ -337,6 +424,40 @@ main .section.bg-animation-slot img {
   height: 50px;
   border-radius: 50%;
   align-self: anchor-center;
+}
+.card.card-effect .card-effect__img .btn {
+  background: #ffffff;
+  color: #0064da;
+  border: 1px solid #ffffff; /*sempre que utilizar background azul, e tive um filho btn, este será  estilo aplicado*/
+}
+.card.card-effect .card-effect__img .btn:hover {
+  background: #0064da;
+  color: #ffffff;
+}
+.card.card-info {
+  gap: 20px;
+}
+.card.card-info .card-info__content {
+  text-align: start;
+}
+.card.card-banner {
+  background-color: #0064da;
+  color: #ffffff;
+  flex-direction: row;
+  padding: 24px 16px;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card.card-banner .btn {
+  background: #ffffff;
+  color: #0064da;
+  border: 1px solid #ffffff; /*sempre que utilizar background azul, e tive um filho btn, este será  estilo aplicado*/
+}
+.card.card-banner .btn:hover {
+  background: #0064da;
+  color: #ffffff;
 }
 
 .btn {
@@ -352,15 +473,24 @@ main .section.bg-animation-slot img {
   background-color: #0064da;
   color: #ffffff;
 }
+.btn.btn-primary .btn {
+  background: #ffffff;
+  color: #0064da;
+  border: 1px solid #ffffff; /*sempre que utilizar background azul, e tive um filho btn, este será  estilo aplicado*/
+}
+.btn.btn-primary .btn:hover {
+  background: #0064da;
+  color: #ffffff;
+}
 .btn.btn-primary:hover {
-  background-color: rgb(0, 76.6055045872, 167);
+  background-color: rgb(19.1513761468, 19.1513761468, 19.1513761468) hsl(0, 0%, -0.1960784314%);
 }
 .btn.btn-secondary {
   background-color: #191919;
   color: #ffffff;
 }
 .btn.btn-secondary:hover {
-  background-color: rgb(86.925, 84.075, 84.075);
+  background-color: rgb(19.1513761468, 19.1513761468, 19.1513761468) hsl(0, 0%, -0.1960784314%);
 }
 .btn.btn-play {
   background-color: #0064da;
@@ -368,10 +498,50 @@ main .section.bg-animation-slot img {
   border-radius: 20px;
   padding: 12px 20px;
 }
+.btn.btn-play .btn {
+  background: #ffffff;
+  color: #0064da;
+  border: 1px solid #ffffff; /*sempre que utilizar background azul, e tive um filho btn, este será  estilo aplicado*/
+}
+.btn.btn-play .btn:hover {
+  background: #0064da;
+  color: #ffffff;
+}
 .btn.btn-play:hover {
-  background-color: rgb(0, 76.6055045872, 167);
+  background-color: rgb(19.1513761468, 19.1513761468, 19.1513761468) hsl(0, 0%, -0.1960784314%);
   transform: scale(1.08);
   transition: all 0.3s ease-in-out;
+}
+
+.tag {
+  border-radius: 16px;
+  border: none;
+  padding: 8px 16px;
+  font-size: 12px;
+  background-color: white;
+  box-shadow: 0 2px 7px rgba(93, 107, 135, 0.51);
+  margin: 8px;
+}
+.tag.is--active {
+  background-color: #0064da;
+  color: #ffffff;
+}
+
+button.tag.tag-filter {
+  cursor: pointer;
+}
+button.tag.tag-filter:hover {
+  background-color: #0064da;
+  color: #ffffff;
+}
+button.tag.tag-filter:hover .btn {
+  background: #ffffff;
+  color: #0064da;
+  border: 1px solid #ffffff; /*sempre que utilizar background azul, e tive um filho btn, este será  estilo aplicado*/
+}
+button.tag.tag-filter:hover .btn:hover {
+  background: #0064da;
+  color: #ffffff;
 }
 
 .gallery {

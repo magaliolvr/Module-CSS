@@ -12,6 +12,15 @@ $light-gray: #fbfbfb;
   @if $colors == "blue" {
     background-color: $blue;
     color: $white;
+    .btn {
+      background: $white;
+      color: $blue;
+      border: 1px solid $white; /*sempre que utilizar background azul, e tive um filho btn, este será  estilo aplicado*/
+      &:hover {
+        background: $blue;
+        color: $white;
+      }
+    }
   }
   @if $colors == "white" {
     background-color: $white;
