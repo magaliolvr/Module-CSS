@@ -9,6 +9,7 @@
   margin-bottom: 24px;
   border-radius: 4px;
   padding: 16px;
+  background-color: $white;
 
   &.card-effect {
     transition: all 0.4s ease-in-out;
@@ -42,5 +43,23 @@
       border-radius: 50%;
       align-self: anchor-center;
     }
+  }
+
+  &.card-info {
+    gap: 20px;
+
+    .card-info__content {
+      text-align: start;
+    }
+  }
+
+  &.card-banner {
+    @include background("blue");
+    flex-direction: row;
+    padding: 24px 16px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

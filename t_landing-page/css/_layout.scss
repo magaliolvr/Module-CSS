@@ -113,16 +113,92 @@ main {
     }
 
     &.bg-animation-slot {
-      position: relative;
-      z-index: 1;
-      background-clip: url("/t_landing-page/assets/background.mp4");
-      background-size: cover;
-      padding: 40px 32px;
+      .gallery-wrapper {
+        position: relative; /* O position: relative é necessário para que o absolute do vídeo funcione com base nessa div.scss Copiar Editar */
 
-      img {
-        max-width: 500px;
-        margin: 0 auto;
-        display: block;
+        .bg-animation-slot__video {
+          position: absolute; /*Faz com que o vídeo "flutue" sobre o .gallery-wrapper, podendo ser posicionado manualmente.*/
+          top: 0;
+          left: 50%;
+          width: 100vw;
+          height: 60%;
+          object-fit: cover;
+          z-index: 0;
+          align-self: anchor-center;
+          pointer-events: none;
+          transform: translateX(-50%);
+        }
+
+        .gallery {
+          position: relative;
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  .articles-slot {
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    text-align: -webkit-center;
+    width: 100%;
+
+    .articles-slot__filters {
+      margin: 24px 16px;
+
+      & ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+    }
+
+    .articles-slot__content {
+      max-width: 100%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+
+      & ul {
+        gap: 24px;
+        display: flex;
+      }
+    }
+  }
+}
+
+// footer
+
+footer {
+  border-top: solid 1px #f3f1f1;
+
+  .footer-content {
+    font-size: 12px;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    a {
+      cursor: pointer;
+      color: $black;
+      font-weight: 400;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    ul {
+      &.footer-col {
+        width: calc(100% / 4);
       }
     }
   }

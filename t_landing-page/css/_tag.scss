@@ -1,0 +1,27 @@
+@use "colors" as *;
+
+// --------Importing styles----------------
+.tag {
+  border-radius: 16px;
+  border: none;
+  padding: 8px 16px;
+  font-size: 12px;
+  background-color: white;
+  box-shadow: 0 2px 7px rgb(93 107 135 / 51%);
+  margin: 8px;
+
+  &.is--active {
+    background-color: $blue;
+    color: $white;
+  }
+}
+
+// --------When is button----------------
+
+button.tag.tag-filter {
+  cursor: pointer;
+
+  &:hover {
+    @include background("blue");
+  }
+}
