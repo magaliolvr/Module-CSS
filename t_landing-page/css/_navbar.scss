@@ -48,4 +48,97 @@
       }
     }
   }
+
+  .menu-hamburguer {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 16px;
+
+    .menu-hamburguer {
+      display: flex;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      z-index: 10;
+
+      // Linha central
+      &::before,
+      &::after,
+      span {
+        content: "";
+        display: block;
+        height: 3px;
+        width: 28px;
+        background: #191919; // ou a cor desejada
+        border-radius: 2px;
+        position: absolute;
+        left: 6px;
+        transition: 0.3s;
+      }
+
+      // Linha superior
+      &::before {
+        top: 12px;
+      }
+      // Linha central
+      span {
+        top: 18px;
+        transition: 0.4s;
+      }
+      // Linha inferior
+      &::after {
+        top: 24px;
+      }
+    }
+
+    .menu-hamburguer.is-active {
+      &::before {
+        top: 18px;
+        transform: rotate(45deg);
+      }
+      span {
+        opacity: 0;
+      }
+      &::after {
+        top: 18px;
+        transform: rotate(-45deg);
+      }
+    }
+
+    .navbar__actions {
+      display: none;
+    }
+
+    ul.menu-list {
+      display: none;
+
+      .btn {
+        width: 100%;
+      }
+
+      &.is-open {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        flex-direction: column;
+        padding: 20px 20px;
+        background: white;
+      }
+    }
+  }
 }

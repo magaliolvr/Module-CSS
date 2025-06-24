@@ -4,19 +4,87 @@
   background: #fbfbfb;
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -26,25 +94,40 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
 body {
   line-height: 1;
+  position: relative;
+  height: 100%;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: "";
   content: none;
 }
@@ -208,7 +291,83 @@ small,
   background-color: transparent;
   color: #191919;
 }
+.navbar .menu-hamburguer {
+  display: none;
+}
 
+@media only screen and (max-width: 600px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .navbar .menu-hamburguer {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+  }
+  .navbar .menu-hamburguer::before, .navbar .menu-hamburguer::after,
+  .navbar .menu-hamburguer span {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 28px;
+    background: #191919;
+    border-radius: 2px;
+    position: absolute;
+    left: 6px;
+    transition: 0.3s;
+  }
+  .navbar .menu-hamburguer::before {
+    top: 12px;
+  }
+  .navbar .menu-hamburguer span {
+    top: 18px;
+    transition: 0.4s;
+  }
+  .navbar .menu-hamburguer::after {
+    top: 24px;
+  }
+  .navbar .menu-hamburguer.is-active::before {
+    top: 18px;
+    transform: rotate(45deg);
+  }
+  .navbar .menu-hamburguer.is-active span {
+    opacity: 0;
+  }
+  .navbar .menu-hamburguer.is-active::after {
+    top: 18px;
+    transform: rotate(-45deg);
+  }
+  .navbar .navbar__actions {
+    display: none;
+  }
+  .navbar ul.menu-list {
+    display: none;
+  }
+  .navbar ul.menu-list .btn {
+    width: 100%;
+  }
+  .navbar ul.menu-list.is-open {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px 20px;
+    background: white;
+  }
+}
 main {
   display: block;
   flex-direction: column;
@@ -218,7 +377,6 @@ main {
   margin: 60px auto 0 auto;
   padding: 40px 32px;
   max-width: 1200px;
-  margin: 60px auto 0 auto;
 }
 main :has(> button + button) {
   display: flex;
@@ -244,6 +402,9 @@ main .hero_title {
   font-weight: 700;
   line-height: 1.2;
 }
+main .hero_subtitle {
+  font-size: 16px;
+}
 main .hero .btn.btn-play {
   position: relative;
   top: -20px;
@@ -255,6 +416,7 @@ main .section {
   justify-content: center;
   text-align: center;
   margin-bottom: 40px;
+  padding: 40px 32px;
 }
 main .section_title {
   margin-bottom: 32px;
@@ -273,7 +435,6 @@ main .section.section--highlight {
   position: relative;
   z-index: 1;
   background: none;
-  padding: 40px 32px;
 }
 main .section.section--highlight img {
   max-width: 500px;
@@ -346,8 +507,31 @@ main .articles-slot .articles-slot__content {
   flex-wrap: wrap;
 }
 main .articles-slot .articles-slot__content ul {
-  gap: 24px;
   display: flex;
+}
+main .articles-slot .articles-slot__content .swiper {
+  width: 80%;
+  height: 80%;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+main .articles-slot .articles-slot__content .swiper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .articles-slot .articles-slot__content .swiper .swiper-slide .card.card-info {
+  margin-bottom: 40px;
+  width: 280px;
+}
+main .articles-slot .articles-slot__content .swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 footer {
@@ -375,6 +559,55 @@ footer .footer-content ul.footer-col {
   width: 25%;
 }
 
+@media only screen and (max-width: 600px) {
+  main {
+    margin: auto;
+    padding: 24px 16px;
+  }
+  main .btn {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  main :has(> button + button) {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  main .hero_title {
+    margin-bottom: 16px;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+  main .hero_subtitle {
+    font-size: 16px;
+  }
+  main .section {
+    padding: 24px 16px;
+  }
+  main .section_title {
+    margin-bottom: 16px;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.1;
+  }
+  main .section_content {
+    font-size: 16px;
+  }
+  main .section.section--highlight .section__line-marker::after {
+    top: -25px;
+    height: 50px;
+  }
+  main .articles-slot > .articles-slot__content > .swiper {
+    width: 100%;
+  }
+  main .articles-slot > .articles-slot__content > .swiper .swiper-button-next,
+  main .articles-slot > .articles-slot__content > .swiper .swiper-button-prev {
+    display: none;
+  }
+}
 .card {
   display: flex;
   flex-direction: column;
