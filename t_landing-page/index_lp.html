@@ -4,22 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/t_landing-page/css/styles.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/main.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="shortcut icon" href="./assets/logo.webp" type="image/x-icon">
+    <title>Landing Page CSS</title>
 </head>
 
 <body>
     <nav class="navbar">
         <img src="Assets/logo.webp" alt="logoipsum" class="navbar__logo">
-        <ul>
+        <button id="menu-hamburguer" class="menu-hamburguer" aria-label="Abrir menu"><span></span></button>
+        <ul id="nav-menu-list" class="menu-list ">
             <li><a href="#" aria-label="Pricing">Pricing</a></li>
             <li><a href="#" aria-label="About">About</a></li>
             <li><a href="#" aria-label="Tutorials">Tutorials</a></li>
             <li><a href="#" aria-label="Blog">Blog</a></li>
         </ul>
         <div class="navbar__actions">
-            <button class="btn btn-primary" aria-label="login button">Sign In</button>
-            <button class="btn btn-secondary" aria-label="Get for free">Sign Up</button>
+            <button id="btn-signin" class="btn btn-primary" aria-label="login button">Sign In</button>
+            <button id="btn-signup" class="btn btn-secondary" aria-label="Get for free">Sign Up</button>
         </div>
     </nav>
 
@@ -39,7 +43,7 @@
             </div>
             <div>
                 <video muted="" autoplay="" loop="">
-                    <source src="/t_landing-page/assets/video.mp4" type="video/mp4">
+                    <source src="assets/video.mp4" type="video/mp4">
                 </video>
                 <button class="btn btn-play">Watch more</button>
             </div>
@@ -51,7 +55,7 @@
                 <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
                     excepteur sint occaecat cupidatat.</p>
 
-                <img src="/t_landing-page/assets/hero-image.png" alt="tamplates image">
+                <img src="assets/hero-image.png" alt="tamplates image">
 
             </div>
         </section>
@@ -63,14 +67,14 @@
                 </p>
             </div>
             <!-- background video -->
-            <div class="gallery-wrapper">
+            <div class="gallery-wrapper ">
                 <video autoplay="" class="bg-animation-slot__video" muted="" loop="" poster="poster.jpg">
-                    <source src="/t_landing-page/assets/background.mp4" type="video/mp4">
+                    <source src="assets/background.mp4" type="video/mp4">
                 </video>
 
 
                 <!-- gallery with cards with animation -->
-                <ul class="gallery">
+                <ul class="gallery ">
                     <li>
                         <div class="card card-effect">
                             <div class="card-effect__img"></div>
@@ -150,6 +154,7 @@
             <h2>The most innovative businesses choose Simple</h2>
             <!-- tags -->
             <div class="articles-slot__filters">
+
                 <ul>
                     <li>
                         <button class="tag tag-filter is--active" aria-pressed="true">
@@ -175,11 +180,161 @@
             </div>
 
             <!-- cards -->
+
+
+
             <div class="articles-slot__content">
-                <ul>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card card-info">
+                                <img src=" assets/info_data.jpeg"
+                                    alt="Pessoa usando laptop com gráficos digitais flutuantes.">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <span class="tag">Development</span>
+                                        </li>
+                                        <li>
+                                            <span class="tag">Blockchain</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-info__content">
+                                    <span>“How HubSpot saved 25% on developing costs by switching to Simple.”</span>
+                                    <div class="user-badge">
+                                        <span class="user-badge__avatar">HP</span>
+                                        <span class="user-badge__name">Harry Potter</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card card-info">
+                                <img src=" assets/info_data.jpeg"
+                                    alt="Pessoa usando laptop com gráficos digitais flutuantes.">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <span class="tag">Development</span>
+                                        </li>
+                                        <li>
+                                            <span class="tag">Blockchain</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-info__content">
+                                    <span>“How HubSpot saved 25% on developing costs by switching to Simple.”</span>
+                                    <div class="user-badge">
+                                        <span class="user-badge__avatar">HP</span>
+                                        <span class="user-badge__name">Harry Potter</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card card-info">
+                                <img src=" assets/info_data.jpeg"
+                                    alt="Pessoa usando laptop com gráficos digitais flutuantes.">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <span class="tag">Development</span>
+                                        </li>
+                                        <li>
+                                            <span class="tag">Blockchain</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-info__content">
+                                    <span>“How HubSpot saved 25% on developing costs by switching to Simple.”</span>
+                                    <div class="user-badge">
+                                        <span class="user-badge__avatar">HP</span>
+                                        <span class="user-badge__name">Harry Potter</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card card-info">
+                                <img src=" assets/info_data.jpeg"
+                                    alt="Pessoa usando laptop com gráficos digitais flutuantes.">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <span class="tag">Development</span>
+                                        </li>
+                                        <li>
+                                            <span class="tag">Blockchain</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-info__content">
+                                    <span>“How HubSpot saved 25% on developing costs by switching to Simple.”</span>
+                                    <div class="user-badge">
+                                        <span class="user-badge__avatar">HP</span>
+                                        <span class="user-badge__name">Harry Potter</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card card-info">
+                                <img src=" assets/info_data.jpeg"
+                                    alt="Pessoa usando laptop com gráficos digitais flutuantes.">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <span class="tag">Development</span>
+                                        </li>
+                                        <li>
+                                            <span class="tag">Blockchain</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-info__content">
+                                    <span>“How HubSpot saved 25% on developing costs by switching to Simple.”</span>
+                                    <div class="user-badge">
+                                        <span class="user-badge__avatar">HP</span>
+                                        <span class="user-badge__name">Harry Potter</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card card-info">
+                                <img src=" assets/info_data.jpeg"
+                                    alt="Pessoa usando laptop com gráficos digitais flutuantes.">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <span class="tag">Development</span>
+                                        </li>
+                                        <li>
+                                            <span class="tag">Blockchain</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-info__content">
+                                    <span>“How HubSpot saved 25% on developing costs by switching to Simple.”</span>
+                                    <div class="user-badge">
+                                        <span class="user-badge__avatar">HP</span>
+                                        <span class="user-badge__name">Harry Potter</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+                <!-- <ul>
                     <li>
                         <div class="card card-info">
-                            <img src="/t_landing-page/assets/info_data.jpeg"
+                            <img src=" assets/info_data.jpeg"
                                 alt="Pessoa usando laptop com gráficos digitais flutuantes.">
                             <div>
                                 <ul>
@@ -198,10 +353,11 @@
                                     <span class="user-badge__name">Harry Potter</span>
                                 </div>
                             </div>
+                        </div>
                     </li>
                     <li>
                         <div class="card card-info">
-                            <img src="/t_landing-page/assets/info_data.jpeg"
+                            <img src=" assets/info_data.jpeg"
                                 alt="Pessoa usando laptop com gráficos digitais flutuantes.">
                             <div>
                                 <ul>
@@ -220,10 +376,11 @@
                                     <span class="user-badge__name">Harry Potter</span>
                                 </div>
                             </div>
+                        </div>
                     </li>
                     <li>
                         <div class="card card-info">
-                            <img src="/t_landing-page/assets/info_data.jpeg"
+                            <img src=" assets/info_data.jpeg"
                                 alt="Pessoa usando laptop com gráficos digitais flutuantes.">
                             <div>
                                 <ul>
@@ -242,10 +399,11 @@
                                     <span class="user-badge__name">Harry Potter</span>
                                 </div>
                             </div>
+                        </div>
                     </li>
                     <li>
                         <div class="card card-info">
-                            <img src="/t_landing-page/assets/info_data.jpeg"
+                            <img src=" assets/info_data.jpeg"
                                 alt="Pessoa usando laptop com gráficos digitais flutuantes.">
                             <div>
                                 <ul>
@@ -264,10 +422,11 @@
                                     <span class="user-badge__name">Harry Potter</span>
                                 </div>
                             </div>
+                        </div>
                     </li>
                     <li>
                         <div class="card card-info">
-                            <img src="/t_landing-page/assets/info_data.jpeg"
+                            <img src=" assets/info_data.jpeg"
                                 alt="Pessoa usando laptop com gráficos digitais flutuantes.">
                             <div>
                                 <ul>
@@ -286,14 +445,17 @@
                                     <span class="user-badge__name">Harry Potter<span>
                                 </div>
                             </div>
+                        </div>
                     </li>
-                </ul>
+                </ul> -->
             </div>
         </section>
         <div class="card card-banner">
             <h4 class="card-banner__title">Ready to get started?</h4>
             <button class="btn btn-secondary">Start for free</button>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     </main>
     <footer>
         <div class="footer-content">
