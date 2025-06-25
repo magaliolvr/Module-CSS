@@ -12,11 +12,6 @@ getMenuHamburguer.addEventListener("click", () => {
 const btnSignIn = document.getElementById("btn-signin");
 const btnSignUp = document.getElementById("btn-signup");
 
-var swiper = new Swiper(".Swiper", {
-  effect: "cards",
-  grabCursor: true,
-});
-
 // condição para tamanho do ecra
 if (window.matchMedia("(max-width: 599px)").matches) {
   // cria os elementos <li> e adiciona a <ul> chamada pelo ID no getMenuHamburguer
@@ -27,6 +22,29 @@ if (window.matchMedia("(max-width: 599px)").matches) {
   // adiciona cada botao, mencionado anteriormente, dentro de uma li
   createItemList1.append(btnSignIn);
   createItemList2.append(btnSignUp);
+
+  // inicio lógica para carroussel de cards na sessao backgound video
+
+  const getGallery = document.getElementById("gallery-swiper-cards");
+  getGallery.classList.add("swiper-wrapper");
+  const divWrapperSwiperCards = document.createElement("div");
+  divWrapperSwiperCards.setAttribute("class", "swiper Swiper");
+  getGallery.parentNode.insertBefore(divWrapperSwiperCards, getGallery); //primeiro insere no codigo, assim antes da gallery
+  divWrapperSwiperCards.appendChild(getGallery); //aqui passa o conteudo da gallery para dentro da div com class swiper
+
+  // busca pela class
+  const gallery = document.querySelector(".gallery");
+
+  const cards = gallery.querySelectorAll(".card.card-effect");
+
+  cards.forEach((card, index) => {
+    card.classList.add("swiper-slide");
+  });
+
+  var swiper = new Swiper(".Swiper", {
+    effect: "cards",
+    grabCursor: true,
+  });
 } else {
 }
 
