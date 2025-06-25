@@ -297,6 +297,7 @@ small,
 
 @media only screen and (max-width: 600px) {
   .navbar {
+    padding: 8px 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -366,6 +367,41 @@ small,
     flex-direction: column;
     padding: 20px 20px;
     background: white;
+  }
+}
+footer {
+  border-top: solid 1px #f3f1f1;
+}
+footer .footer-content {
+  font-size: 12px;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+footer .footer-content h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+footer .footer-content a {
+  cursor: pointer;
+  color: #191919;
+  font-weight: 400;
+}
+footer .footer-content a:hover {
+  text-decoration: underline;
+}
+footer .footer-content ul.footer-col {
+  width: 25%;
+}
+
+@media only screen and (max-width: 600px) {
+  footer .footer-content {
+    background-color: #e7e7e7;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 }
 main {
@@ -479,6 +515,16 @@ main .section.bg-animation-slot .gallery-wrapper .bg-animation-slot__video {
   pointer-events: none;
   transform: translateX(-50%);
 }
+main .section.bg-animation-slot .gallery-wrapper .swiper {
+  width: 240px;
+  height: 320px;
+}
+main .section.bg-animation-slot .gallery-wrapper .swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+}
 main .section.bg-animation-slot .gallery-wrapper .gallery {
   position: relative;
   z-index: 1;
@@ -534,31 +580,6 @@ main .articles-slot .articles-slot__content .swiper .swiper-slide img {
   object-fit: cover;
 }
 
-footer {
-  border-top: solid 1px #f3f1f1;
-}
-footer .footer-content {
-  font-size: 12px;
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-}
-footer .footer-content h2 {
-  font-size: 20px;
-  margin-bottom: 8px;
-}
-footer .footer-content a {
-  cursor: pointer;
-  color: #191919;
-  font-weight: 400;
-}
-footer .footer-content a:hover {
-  text-decoration: underline;
-}
-footer .footer-content ul.footer-col {
-  width: 25%;
-}
-
 @media only screen and (max-width: 600px) {
   main {
     margin: auto;
@@ -607,6 +628,18 @@ footer .footer-content ul.footer-col {
   main .articles-slot > .articles-slot__content > .swiper .swiper-button-prev {
     display: none;
   }
+  main .articles-slot .articles-slot__filters {
+    margin: 16px;
+  }
+  main .articles-slot .articles-slot__filters ul {
+    gap: 0px;
+  }
+  main .articles-slot .articles-slot__filters .tag.tag-filter {
+    font-size: 14px;
+    cursor: pointer;
+    padding: 16px 24px;
+    border-radius: 24px;
+  }
 }
 .card {
   display: flex;
@@ -628,26 +661,28 @@ footer .footer-content ul.footer-col {
 .card.card-effect .card-effect__title h3 {
   font-size: 24px;
 }
-.card.card-effect:hover {
-  background-color: #0064da;
-  color: #ffffff;
-  border: none;
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.card.card-effect:hover .btn {
-  background: #ffffff;
-  color: #0064da;
-  border: 1px solid #ffffff; /*sempre que utilizar background azul, e tive um filho btn, este será  estilo aplicado*/
-}
-.card.card-effect:hover .btn:hover {
-  background: #0064da;
-  color: #ffffff;
-}
-.card.card-effect:hover .card-effect__img {
-  background-color: #ffffff;
-  color: #0064da;
-  transform: scale(1.05);
+@media only screen and (min-width: 600px) {
+  .card.card-effect:hover {
+    background-color: #0064da;
+    color: #ffffff;
+    border: none;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .card.card-effect:hover .btn {
+    background: #ffffff;
+    color: #0064da;
+    border: 1px solid #ffffff; /*sempre que utilizar background azul, e tive um filho btn, este será  estilo aplicado*/
+  }
+  .card.card-effect:hover .btn:hover {
+    background: #0064da;
+    color: #ffffff;
+  }
+  .card.card-effect:hover .card-effect__img {
+    background-color: #ffffff;
+    color: #0064da;
+    transform: scale(1.05);
+  }
 }
 .card.card-effect .card-effect__img {
   content: "";
@@ -691,6 +726,13 @@ footer .footer-content ul.footer-col {
 .card.card-banner .btn:hover {
   background: #0064da;
   color: #ffffff;
+}
+@media only screen and (max-width: 600px) {
+  .card.card-banner {
+    gap: 24px;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 
 .btn {
