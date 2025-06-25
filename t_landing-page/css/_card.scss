@@ -23,16 +23,18 @@
       }
     }
 
-    &:hover {
-      @include background("blue");
-      border: none;
-      transform: scale(1.05);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+    @media only screen and (min-width: 600px) {
+      &:hover {
+        @include background("blue");
+        border: none;
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
 
-    &:hover .card-effect__img {
-      @include background("white");
-      transform: scale(1.05);
+      &:hover .card-effect__img {
+        @include background("white");
+        transform: scale(1.05);
+      }
     }
 
     .card-effect__img {
@@ -61,5 +63,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media only screen and (max-width: 600px) {
+      gap: 24px;
+      justify-content: center;
+      flex-direction: column;
+    }
   }
 }

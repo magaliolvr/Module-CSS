@@ -1,11 +1,3 @@
-// window.addEventListener("scroll", function () {
-//   if (window.pageYOffset >= 200) {
-//     document.querySelector("nav").classList.add("nav-fixed");
-//   } else {
-//     document.querySelector("nav").classList.remove("nav-fixed");
-//   }
-// });
-
 // CLICK NO MENU HAMBURGUER PARA ABRIR MODAL
 
 // adiciona evento listner ao menu hamburguer e chama a função que adiciona a class is open ao menu list
@@ -19,6 +11,11 @@ getMenuHamburguer.addEventListener("click", () => {
 // busca os botoes de signin e signup
 const btnSignIn = document.getElementById("btn-signin");
 const btnSignUp = document.getElementById("btn-signup");
+
+var swiper = new Swiper(".Swiper", {
+  effect: "cards",
+  grabCursor: true,
+});
 
 // condição para tamanho do ecra
 if (window.matchMedia("(max-width: 599px)").matches) {
