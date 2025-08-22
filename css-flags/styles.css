@@ -1,44 +1,275 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
-    font-family: 'Inter', sans-serif;
-    --page-background: #222;
-    --flag-width: 300px;
+  font-family: "Inter", sans-serif;
+  --page-background: #222;
+  --flag-width: 300px;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 32px 16px;
-    background: var(--page-background);
-    color: white;
+  margin: 0;
+  padding: 32px 16px;
+  background: var(--page-background);
+  color: white;
 }
 
 body {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .flag {
-    width: var(--flag-width);
-    aspect-ratio: 4/3;
-    background: gainsboro;
-    position: relative;
+  width: var(--flag-width);
+  aspect-ratio: 4/3;
+  background: gainsboro;
+  position: relative;
 }
 
 .flag::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(120deg, rgba(240, 240, 240, 0.271), rgba(92, 13, 13, 0.162));
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .flag_title {
-    font-size: 16px;
-    font-weight: 300;
-    letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* Italy */
+
+.flag.flag--italy {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.flag.flag--italy :first-child {
+  background: green;
+}
+
+.flag.flag--italy :nth-child(2) {
+  background: white;
+}
+
+.flag.flag--italy :nth-child(3) {
+  background: red;
+}
+
+/* Ukraine */
+
+.flag.flag--ukraine {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.flag.flag--ukraine :first-child {
+  background: blue;
+}
+
+.flag.flag--ukraine :nth-child(2) {
+  background: yellow;
+}
+
+/* Kuwait */
+
+.flag.flag--kuwait {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.flag.flag--kuwait :first-child {
+  background: green;
+}
+
+.flag.flag--kuwait :nth-child(2) {
+  background: white;
+}
+
+.flag.flag--kuwait :nth-child(3) {
+  background: red;
+}
+
+.flag.flag--kuwait :nth-child(4) {
+  content: "";
+  background: black;
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  clip-path: polygon(0 0, 76% 33.333%, 76% 66.667%, 0% 100%);
+
+  /* outra solução seria calcular as posições dos vértices com base na largura e altura do container */
+  /* clip-path: polygon(0 0,100% calc(100%/3),100% calc(200%/3),0 100%); */
+}
+
+/* bangladesh */
+
+.flag.flag--bangladesh {
+  background: #125512;
+}
+
+.flag.flag--bangladesh::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 40%;
+  background: red;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Portugal */
+
+.flag.flag--portugal {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.flag.flag--portugal .green {
+  grid-column: 1 / 3;
+  background: green;
+}
+
+.flag.flag--portugal .red {
+  grid-column: 3 / 6;
+  background: red;
+}
+
+.flag.flag--portugal .brasao {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-80%, -50%);
+  width: 35%;
+  z-index: 9999;
+}
+
+/* Japan */
+
+.flag.flag--japan {
+  background: white;
+}
+
+.flag.flag--japan::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 40%;
+  background: red;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Greece */
+
+.flag.flag--greece {
+  position: relative;
+  width: 100%; /* ocupa todo o container */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Listras */
+.flag.flag--greece .stripe {
+  background-color: #055eb0;
+  width: 100%;
+  height: calc(100% / 9);
+}
+.flag.flag--greece .stripe--white {
+  background-color: white;
+}
+
+.flag.flag--greece .square {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%; /* largura do quadrado */
+  height: calc(100% * 5 / 9); /* ocupa altura de 5 listras */
+  background-color: #055eb0;
+}
+
+/* Cruz branca dentro do quadrado */
+.flag.flag--greece .square::before,
+.flag.flag--greece .square::after {
+  content: "";
+  position: absolute;
+  background: white;
+}
+
+.flag.flag--greece .square::before {
+  width: 20%; /* 1/5 da largura do quadrado */
+  height: 100%;
+  left: 40%; /* centralizado */
+  top: 0;
+}
+
+.flag.flag--greece .square::after {
+  width: 100%;
+  height: 20%; /* 1/5 da altura do quadrado */
+  top: 40%; /* centralizado */
+  left: 0;
+}
+
+/* EUA */
+
+.flag.flag--eua {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Listras */
+.flag.flag--eua .stripe {
+  background-color: #9b1c2c;
+  width: 100%;
+  height: calc(100% / 13);
+}
+.flag.flag--eua .stripe--white {
+  background-color: white;
+}
+
+/* Cantão azul */
+.flag.flag--eua .USA-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% / 2);
+  height: calc(100% * 6 / 12);
+  background-color: #041e42;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 2%;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
+/* Linha de estrelas */
+.flag.flag--eua .star-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Linhas com 5 estrelas deslocadas */
+.flag.flag--eua .star-row--five {
+  justify-content: space-around; /* centraliza com espaços iguais */
+}
+
+/* Estrelas */
+.flag.flag--eua .star {
+  font-size: 8%; /* relativo ao container da bandeira */
+  color: white;
+  line-height: 1; /* remove espaçamento extra */
 }

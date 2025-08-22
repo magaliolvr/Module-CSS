@@ -52,60 +52,60 @@ pre {
 /* Coloca o teu CSS a partir daqui */
 .ball-0 {
   position: relative;
-  left: 20%;
-  bottom: 10%;
+  left: 60%;
+  bottom: 20%;
 }
 
 .ball-1 {
-  position: relative;
-  bottom: 30%;
-  left: 50%;
-}
-
-.ball-2 {
   position: relative;
   bottom: 10%;
   left: 0%;
 }
 
+.ball-2 {
+  position: relative;
+  bottom: 40%;
+  left: 20%;
+}
+
 .ball-3 {
   position: relative;
-  bottom: 10%;
-  left: 20%;
+  bottom: 50%;
+  left: 50%;
 }
 
 .ball-4 {
   position: relative;
-  bottom: 90%;
+  bottom: 20%;
   left: 60%;
 }
 
 .ball-5 {
   position: relative;
-  bottom: 70%;
-  left: 20%;
+  bottom: 50%;
+  left: 40%;
 }
 
 .ball-6 {
   position: relative;
-  bottom: 30%;
-  left: 70%;
+  bottom: 70%;
+  left: 80%;
 }
 
 .ball-7 {
   position: relative;
   bottom: 40%;
-  left: 30%;
+  left: 70%;
 }
 
 .ball-8 {
   position: relative;
-  bottom: 10%;
-  left: 0;
+  bottom: 100%;
+  left: 10%;
 }
 
 .ball-9 {
   position: relative;
-  bottom: 50%;
-  left: 10%;
+  bottom: 40%;
+  left: 80%;
 }
